@@ -21,7 +21,7 @@ export const jsTypeForAirtableType = (field: FieldSchema): string | null => {
 		case 'lastModifiedBy':
 		case 'barcode':
 		case 'button':
-			return 'string';
+			return 'string | null';
 		case 'multipleAttachments':
 		case 'multipleCollaborators':
 		case 'multipleRecordLinks':
@@ -34,12 +34,12 @@ export const jsTypeForAirtableType = (field: FieldSchema): string | null => {
 		case 'percent':
 		case 'count':
 		case 'autoNumber':
-			return 'number';
+			return 'number | null';
 		case 'date':
 		case 'dateTime':
 		case 'createdTime':
 		case 'lastModifiedTime':
-			return 'number'; // Unix timestamp in seconds
+			return 'number | null'; // Unix timestamp in seconds
 		case 'checkbox':
 			return 'boolean';
 		case 'lookup':
